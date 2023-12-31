@@ -30,8 +30,8 @@ function Edit({ item, setItem, show, setShow }) {
 
     setItem(newArray);
     setShow(false);
-    setTitle("");
-    setDescription("");
+     setTitle("");
+  setDescription("");
   };
 
   const getData = () => {

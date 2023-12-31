@@ -18,8 +18,8 @@ function Add({item,setItem}) {
       description
     })
     setItem(array)
-    setTitle(" ");
-    setDescription(" ");
+    setTitle("");
+    setDescription("");
   }
 
 
