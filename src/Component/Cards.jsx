@@ -3,25 +3,20 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Dropdown from "react-bootstrap/Dropdown";
 
-function Cards({item,setItem,setShow}) {
-
+function Cards({ item, setItem, setShow }) {
   const handleDelete = (id) => {
-    let index = 0
-    for (let i =0 ; i<item.length; i++){
-      if (item[i].id === id){
-        index = i
+    let index = 0;
+    for (let i = 0; i < item.length; i++) {
+      if (item[i].id === id) {
+        index = i;
         break;
       }
     }
 
-    let array = [...item]
-    array.splice(index,1)
-    setItem(array)
-
-  }
-
-
-  
+    let array = [...item];
+    array.splice(index, 1);
+    setItem(array);
+  };
 
   return (
     <>
@@ -29,23 +24,21 @@ function Cards({item,setItem,setShow}) {
         <h3>My Todos </h3>
 
         <br />
-
-        {item.map((data ) => {
-          return (
-            
+        <div className="row">
+          {item.map((data) => {
+            return (
+              <div className="col-md-4"  key={data.id}>
               <Card
-              
                 style={{
-                  display: "flex",  // Add this line
-                  flexDirection: "column",  
+                  display: "flex", // Add this line
+                  flexDirection: "column",
                   width: "20rem",
                   height: "13rem",
-                  backgroundColor: "#a9fcbf"
-                  
+                  backgroundColor: "#a9fcbf",
                 }}
-                key = {data.id}
+               
               >
-                <Card.Body >
+                <Card.Body>
                   <Card.Title className="mb-2">
                     Title : {data.title}{" "}
                   </Card.Title>
@@ -65,16 +58,27 @@ function Cards({item,setItem,setShow}) {
                     </Dropdown.Menu>
                   </Dropdown>
                   <div className="mt-auto">
-                    <Button variant="success" className="mr-2" onClick = {() => setShow(true)} >
+                    <Button
+                      variant="success"
+                      className="mr-2"
+                      onClick={() => setShow(true)}
+                    >
                       Edit
-                    </Button> &nbsp;
-                    <Button variant="danger" onClick = {() => handleDelete(data.id)}>Delete</Button>
+                    </Button>{" "}
+                    &nbsp;
+                    <Button
+                      variant="danger"
+                      onClick={() => handleDelete(data.id)}
+                    >
+                      Delete
+                    </Button>
                   </div>
                 </Card.Body>
               </Card>
-            
-          );
-        })}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
