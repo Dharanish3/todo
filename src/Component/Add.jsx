@@ -30,14 +30,14 @@ function Add({item,setItem}) {
       <br />
         <Form className="d-flex">
           <Form.Group className="mb-3 col-5" controlId="formBasicEmail">
-            <Form.Control type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)}  />
+            <Form.Control type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}  />
           </Form.Group>
 
           &nbsp;
 
 
           <Form.Group className="mb-3 col-5" controlId="formBasicPassword">
-            <Form.Control type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
+            <Form.Control type="text" placeholder="Description" value ={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Group>
           &nbsp;
           <Button variant="primary" onClick ={() => handleClick()}>Add</Button>
