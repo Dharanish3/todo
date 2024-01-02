@@ -34,12 +34,17 @@ function Add({item,setItem}) {
           </Form.Group>
 
           &nbsp;
+          &nbsp;
+
 
 
           <Form.Group className="mb-3 col-5" controlId="formBasicPassword">
             <Form.Control type="text" placeholder="Description" value ={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Group>
           &nbsp;
+          &nbsp;
+
+          
           <Button variant="primary" onClick ={() => handleClick()}>Add</Button>
         </Form>
       </div>
